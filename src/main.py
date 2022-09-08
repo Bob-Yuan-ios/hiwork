@@ -1,5 +1,6 @@
 # This is a sample Python script.
 import asyncio
+from typing import Callable, Any
 
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
@@ -49,6 +50,31 @@ import asyncio
 # update_dictionary()
 
 
-from grammar.control import *
-start_while()
+# from grammar.control import *
+# start_while()
+
+
+from grammar.function import *
+
+# a = '123'
+# print('before function a is:', a)
+# param_conversion(a)
+# print('after function a is:', a)
+#
+# b = ['1', '2']
+# print('before function b is:', b)
+# param_conversion(b)
+# print('after function b is:', b)
+
+
+# default_value('123456')
+# square = nth_power(2)
+# cube = nth_power(3)
+# print(square(2))
+# print(cube(2))
+
+
+# print(add(2, 3))
+print(start_special())
+
 
