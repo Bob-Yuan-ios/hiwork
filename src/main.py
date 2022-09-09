@@ -139,6 +139,9 @@ api.add_resource(TodoList, '/todos')
 #         "task": "world"
 #     }
 # }
+# curl http://localhost:5000/todos -X POST -H 'Content-Type: application/json' -d '{"task":"have a nice day",
+# "optional_argument": 1}'
+# { "task": "have a nice day" }
 api.add_resource(Todo, '/todos/<todo_id>')
 # curl http://localhost:5000/todos/todo3
 # {
@@ -146,7 +149,3 @@ api.add_resource(Todo, '/todos/<todo_id>')
 # }
 if __name__ == '__main__':
     app.run(debug=True)
-# curl http://localhost:5000/todos -X POST -H 'Content-Type: application/json' -d '{"task":"have a nice day",
-# "optional_argument": 1}'
-# { "task": "have a nice day" }
-
