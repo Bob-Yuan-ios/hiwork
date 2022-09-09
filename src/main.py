@@ -125,13 +125,13 @@ from services.firstRequest import *
 app = Flask(__name__)
 api = Api(app)
 
-# bob@BobdeMacBook-Pro ~ % curl http://127.0.0.1:5000/
+# curl http://127.0.0.1:5000/
 # {
 #     "hello": "world"
 # }
 api.add_resource(HelloWorld, '/')
 
-# bob@BobdeMacBook-Pro ~ %  curl http://127.0.0.1:5000/todo1 -d "data=Remember the milk" -X PUT
+#  curl http://127.0.0.1:5000/todo1 -d "data=Remember the milk" -X PUT
 # {
 #     "todo1": "Remember the milk"
 # }
