@@ -75,6 +75,23 @@ from grammar.function import *
 
 
 # print(add(2, 3))
-print(start_special())
+# print(start_special())
 
 
+from proto.course import *
+
+software = Course('software')
+software.hello_course()
+
+# 动态新增属性
+software.level = 1
+print('add property', software.level)
+
+
+def info(self):
+    print('__info function__', self)
+
+
+# 动态新增函数
+software.foo = info
+software.foo(software)
