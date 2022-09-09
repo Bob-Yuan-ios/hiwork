@@ -79,7 +79,7 @@ from grammar.function import *
 
 # from types import MethodType
 # from proto.course import *
-# from proto.stock import *
+from proto.stock import *
 #
 # software = Course('software')
 # software.hello_course()
@@ -116,7 +116,7 @@ from grammar.function import *
 # stock.hello_course()
 # Stock.hello_class_method('__class method__')
 # stock.hello_static_method()
-
+# print('stock all vars:', vars(stock))
 
 from flask import Flask
 from flask_restful import Api
@@ -146,8 +146,7 @@ api.add_resource(Todo, '/todos/<todo_id>')
 # }
 if __name__ == '__main__':
     app.run(debug=True)
-# curl http://localhost:5000/todos -X POST -H 'Content-Type: application/json' -d '{"task":"have a nice day", "s": 1}'
-# {
-#     "task": "have a nice day"
-# }
+# curl http://localhost:5000/todos -X POST -H 'Content-Type: application/json' -d '{"task":"have a nice day",
+# "optional_argument": 1}'
+# { "task": "have a nice day" }
 
