@@ -95,3 +95,8 @@ def info(self):
 # 动态新增函数
 software.foo = info
 software.foo(software)
+
+# 动态新增lambda
+software.bind_method = lambda self: print('__lambda function__', self)
+software.bind_method(software)
+
