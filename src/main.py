@@ -79,6 +79,7 @@ from grammar.function import *
 
 from types import MethodType
 from proto.course import *
+from proto.stock import *
 
 software = Course('software')
 software.hello_course()
@@ -109,3 +110,9 @@ def add_function_with_method_type(self):
 software.add_method_type = MethodType(add_function_with_method_type, software)
 # 第一个参数已经绑定，所以可以不传
 software.add_method_type()
+
+print('\n')
+stock = Stock('stock')
+stock.hello_course()
+Stock.hello_class_method('__class method__')
+stock.hello_static_method()
