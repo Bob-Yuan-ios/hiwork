@@ -77,42 +77,66 @@ from grammar.function import *
 # print(add(2, 3))
 # print(start_special())
 
-from types import MethodType
-from proto.course import *
-from proto.stock import *
+# from types import MethodType
+# from proto.course import *
+# from proto.stock import *
+#
+# software = Course('software')
+# software.hello_course()
+#
+# # 动态新增属性
+# software.level = 1
+# print('add property with value', software.level)
+#
+#
+# def info(self):
+#     print('__binding function__', self)
+#
+#
+# # 动态新增函数
+# software.foo = info
+# software.foo(software)
+#
+# # 通过lambda，动态新增函数
+# software.bind_method = lambda self: print('__lambda express__', self)
+# software.bind_method(software)
+#
+#
+# def add_function_with_method_type(self):
+#     print('__methodType function__', self)
+#
+#
+# # 通过MethodType，动态新增函数
+# software.add_method_type = MethodType(add_function_with_method_type, software)
+# # 第一个参数已经绑定，所以可以不传
+# software.add_method_type()
+#
+# print('\n')
+# stock = Stock('stock')
+# stock.hello_course()
+# Stock.hello_class_method('__class method__')
+# stock.hello_static_method()
 
-software = Course('software')
-software.hello_course()
 
-# 动态新增属性
-software.level = 1
-print('add property with value', software.level)
+from flask import Flask
+from flask_restful import Api
+from services.firstRequest import *
 
+app = Flask(__name__)
+api = Api(app)
 
-def info(self):
-    print('__binding function__', self)
+# bob@BobdeMacBook-Pro ~ % curl http://127.0.0.1:5000/
+# {
+#     "hello": "world"
+# }
+api.add_resource(HelloWorld, '/')
 
+# bob@BobdeMacBook-Pro ~ %  curl http://127.0.0.1:5000/todo1 -d "data=Remember the milk" -X PUT
+# {
+#     "todo1": "Remember the milk"
+# }
+api.add_resource(TodoSimple, '/<string:todo_id>')
 
-# 动态新增函数
-software.foo = info
-software.foo(software)
+if __name__ == '__main__':
+    app.run(debug=True)
 
-# 通过lambda，动态新增函数
-software.bind_method = lambda self: print('__lambda express__', self)
-software.bind_method(software)
-
-
-def add_function_with_method_type(self):
-    print('__methodType function__', self)
-
-
-# 通过MethodType，动态新增函数
-software.add_method_type = MethodType(add_function_with_method_type, software)
-# 第一个参数已经绑定，所以可以不传
-software.add_method_type()
-
-print('\n')
-stock = Stock('stock')
-stock.hello_course()
-Stock.hello_class_method('__class method__')
-stock.hello_static_method()
