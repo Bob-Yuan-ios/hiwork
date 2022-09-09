@@ -1,6 +1,4 @@
 # This is a sample Python script.
-import asyncio
-from typing import Callable, Any
 
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
@@ -54,8 +52,6 @@ from typing import Callable, Any
 # start_while()
 
 
-from grammar.function import *
-
 # a = '123'
 # print('before function a is:', a)
 # param_conversion(a)
@@ -79,7 +75,6 @@ from grammar.function import *
 
 # from types import MethodType
 # from proto.course import *
-from proto.stock import *
 #
 # software = Course('software')
 # software.hello_course()
