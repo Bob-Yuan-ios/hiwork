@@ -77,7 +77,7 @@ from grammar.function import *
 # print(add(2, 3))
 # print(start_special())
 
-
+from types import MethodType
 from proto.course import *
 
 software = Course('software')
@@ -85,18 +85,27 @@ software.hello_course()
 
 # 动态新增属性
 software.level = 1
-print('add property', software.level)
+print('add property with value', software.level)
 
 
 def info(self):
-    print('__info function__', self)
+    print('__binding function__', self)
 
 
 # 动态新增函数
 software.foo = info
 software.foo(software)
 
-# 动态新增lambda
-software.bind_method = lambda self: print('__lambda function__', self)
+# 通过lambda，动态新增函数
+software.bind_method = lambda self: print('__lambda express__', self)
 software.bind_method(software)
 
+
+def add_function_with_method_type(self):
+    print('__methodType function__', self)
+
+
+# 通过MethodType，动态新增函数
+software.add_method_type = MethodType(add_function_with_method_type, software)
+# 第一个参数已经绑定，所以可以不传
+software.add_method_type()
