@@ -113,34 +113,37 @@
 # stock.hello_static_method()
 # print('stock all vars:', vars(stock))
 
-from flask import Flask
-from flask_restful import Api
-from services.firstRequest import *
+# from flask import Flask
+# from flask_restful import Api
+# from services.demoRequest import *
+#
+# app = Flask(__name__)
+# api = Api(app)
+#
+#
+# api.add_resource(TodoList, '/todos')
+# # % curl http://localhost:5000/todos
+# # {
+# #     "todo1": {
+# #         "task": "init restful api"
+# #     },
+# #     "todo2": {
+# #         "task": "hello"
+# #     },
+# #     "todo3": {
+# #         "task": "world"
+# #     }
+# # }
+# # curl http://localhost:5000/todos -X POST -H 'Content-Type: application/json' -d '{"task":"have a nice day",
+# # "optional_argument": 1}'
+# # { "task": "have a nice day" }
+# api.add_resource(Todo, '/todos/<todo_id>')
+# # curl http://localhost:5000/todos/todo3
+# # {
+# #     "task": "world"
+# # }
+# if __name__ == '__main__':
+#     app.run(debug=True)
 
-app = Flask(__name__)
-api = Api(app)
-
-
-api.add_resource(TodoList, '/todos')
-# % curl http://localhost:5000/todos
-# {
-#     "todo1": {
-#         "task": "init restful api"
-#     },
-#     "todo2": {
-#         "task": "hello"
-#     },
-#     "todo3": {
-#         "task": "world"
-#     }
-# }
-# curl http://localhost:5000/todos -X POST -H 'Content-Type: application/json' -d '{"task":"have a nice day",
-# "optional_argument": 1}'
-# { "task": "have a nice day" }
-api.add_resource(Todo, '/todos/<todo_id>')
-# curl http://localhost:5000/todos/todo3
-# {
-#     "task": "world"
-# }
-if __name__ == '__main__':
-    app.run(debug=True)
+from services.spark.WordCount import *
+WordCount.test_word_count()
