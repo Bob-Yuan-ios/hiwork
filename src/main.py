@@ -145,5 +145,5 @@
 # if __name__ == '__main__':
 #     app.run(debug=True)
 
-from services.spark.WordCount import *
+from src.utils.spark.WordCount import *
 WordCount.test_word_count()
