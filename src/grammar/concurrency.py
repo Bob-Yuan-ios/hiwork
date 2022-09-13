@@ -5,9 +5,14 @@ import aiohttp
 
 
 def download_one(url):
-    return url
-    # res = requests.get(url)
-    # print('Read {} from {}'.format(len(res.content), url))
+    res = requests.get(url)
+    print(res.status_code)
+    if 200 == res.status_code:
+        print('Read {} from {}'.format(len(res.content), url))
+        return url
+    else:
+        print(res.reason)
+        return url
 
 
 class ConcurrentFutures(object):
@@ -27,10 +32,10 @@ class ConcurrentFutures(object):
 
 
 async def download_one_a(url):
+    bad_fp = b'0' * 64
     async with aiohttp.ClientSession() as session:
-        print(url)
-        # async with session.get(url) as resp:
-        #     print('Read {} from {}'.format(resp.content, url))
+        async with session.get(url, ssl=aiohttp.Fingerprint(bad_fp)) as resp:
+            print('Read {} from {}'.format(len(resp.content), url))
 
 
 class ConcurrentAsyncio(object):
