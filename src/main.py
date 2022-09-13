@@ -179,6 +179,10 @@
 # print('Download {} site\n in {} seconds'.format(sites, end_time - start_time))
 
 
-from services.tradeRequest import TradeRequest
-tradeRequest = TradeRequest()
-tradeRequest.getBtcTicker()
+# from services.tickRequest import TradeRequest
+# tradeRequest = TradeRequest()
+# tradeRequest.getBtcTicker()
+
+
+from services.tradeRequest import *
+trading()
