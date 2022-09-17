@@ -182,14 +182,13 @@ import websocket
 # print('Download {} site\n in {} seconds'.format(sites, end_time - start_time))
 
 
-# from services.restTickerRequest import *
-# RestTicker = RestTicker()
-# RestTicker.getBtcTicker()
+# from services.RestTickRequest import *
+# RestTick = RestTick()
+# RestTick.getBtcTick()
 
 
-from services.socketTicker import *
+from services.socketTick import *
 
-print('hello world')
-# wsRequest = SocketTicker(url="wss://api.gemini.com/v1/marketdata/btcusd?top_of_book=true&offers=true", count=2)
-wsRequest = SocketTicker()
+wsRequest = socketTick(url="wss://api.gemini.com/v1/marketdata/btcusd?top_of_book=true&offers=true", count=2)
+# wsRequest = socketTick()
 wsRequest.start()

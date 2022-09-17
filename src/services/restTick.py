@@ -5,8 +5,8 @@ import json
 import zlib
 
 
-class RestTicker:
-    def getBtcTicker(self):
+class RestTick:
+    def getBtcTick(self):
         periods = '3600'
         resp = requests.get('https://api.cryptowat.ch/markets/gemini/btcusd/ohlc',
                             params={
