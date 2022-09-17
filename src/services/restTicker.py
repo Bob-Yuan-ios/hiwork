@@ -1,9 +1,11 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import requests
+import json
+import zlib
 
 
-class TickerRequest:
+class RestTicker:
     def getBtcTicker(self):
         periods = '3600'
         resp = requests.get('https://api.cryptowat.ch/markets/gemini/btcusd/ohlc',
@@ -27,3 +29,4 @@ class TickerRequest:
 
         df['ClosePrice'].plot(figsize=(14, 7))
         plt.show()
+

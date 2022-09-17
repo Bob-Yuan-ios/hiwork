@@ -1,4 +1,7 @@
 # This is a sample Python script.
+import time
+
+import websocket
 
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
@@ -179,11 +182,14 @@
 # print('Download {} site\n in {} seconds'.format(sites, end_time - start_time))
 
 
-from services.tickRequest import TickerRequest
-tickerRequest = TickerRequest()
-tickerRequest.getBtcTicker()
+# from services.restTickerRequest import *
+# RestTicker = RestTicker()
+# RestTicker.getBtcTicker()
 
 
-# from services.tradeRequest import *
-# trading()
+from services.socketTicker import *
+print('hello world')
+wsRequest =  SocketTicker(url="wss://api.gemini.com/v1/marketdata/btcusd?top_of_book=true&offers=true", count=2)
+wsRequest.start()
+
 
