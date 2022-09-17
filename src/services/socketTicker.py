@@ -7,7 +7,6 @@ import time
 class SocketTicker:
     def __init__(self, url='ws://echo.websocket.events/', count=5):
         self.ws = None
-        # self.url = 'ws://echo.websocket.events/' # 调用on_open的话，配置的url
         self.url = url
         self.count = count
 
@@ -36,6 +35,7 @@ class SocketTicker:
                                on_message=self.on_message)
         self.ws.run_forever(sslopt={"cert_reqs": ssl.CERT_NONE})
 
+        # 使用默认url，调用的方法
         # self.ws = WebSocketApp(self.url,
         #                        on_open=self.on_open,
         #                        on_message=self.on_message)
