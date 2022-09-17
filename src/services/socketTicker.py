@@ -31,12 +31,15 @@ class SocketTicker:
 
     def start(self):
         print('ws start...')
-        self.ws = WebSocketApp(self.url,
-                               on_message=self.on_message)
-        self.ws.run_forever(sslopt={"cert_reqs": ssl.CERT_NONE})
-
         # 使用默认url，调用的方法
-        # self.ws = WebSocketApp(self.url,
-        #                        on_open=self.on_open,
-        #                        on_message=self.on_message)
-        # self.ws.run_forever(ping_timeout=10)
+        if 'ws://echo.websocket.events/' == self.url:
+            self.ws = WebSocketApp(self.url,
+                                   on_open=self.on_open,
+                                   on_message=self.on_message)
+            self.ws.run_forever(ping_timeout=10)
+        else:
+            self.ws = WebSocketApp(self.url,
+                                   on_message=self.on_message)
+            self.ws.run_forever(sslopt={"cert_reqs": ssl.CERT_NONE})
+
+

@@ -190,5 +190,6 @@ import websocket
 from services.socketTicker import *
 
 print('hello world')
-wsRequest = SocketTicker(url="wss://api.gemini.com/v1/marketdata/btcusd?top_of_book=true&offers=true", count=2)
+# wsRequest = SocketTicker(url="wss://api.gemini.com/v1/marketdata/btcusd?top_of_book=true&offers=true", count=2)
+wsRequest = SocketTicker()
 wsRequest.start()
