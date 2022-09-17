@@ -4,7 +4,7 @@ import ssl
 import time
 
 
-class socketTick:
+class SocketTick:
     def __init__(self, url='ws://echo.websocket.events/', count=5):
         self.ws = None
         self.url = url

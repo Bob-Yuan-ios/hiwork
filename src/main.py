@@ -1,7 +1,4 @@
 # This is a sample Python script.
-import time
-
-import websocket
 
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
@@ -187,8 +184,15 @@ import websocket
 # RestTick.getBtcTick()
 
 
-from services.socketTick import *
+# from services.socketTick import *
+#
+# wsRequest = SocketTick(url="wss://api.gemini.com/v1/marketdata/btcusd?top_of_book=true&offers=true", count=2)
+# # wsRequest = socketTick()
+# wsRequest.start()
 
-wsRequest = socketTick(url="wss://api.gemini.com/v1/marketdata/btcusd?top_of_book=true&offers=true", count=2)
-# wsRequest = socketTick()
-wsRequest.start()
+from src.utils.implement.backTest import *
+from src.utils.implement.strategy import *
+
+BTC_USD = read_file('../../resource/BTCUSD_GEMINI.csv')
+ret = BackTest(BTC_USD, SmaCross, ExchangeAPI, 10004, 0.02).run()
+print(ret)
