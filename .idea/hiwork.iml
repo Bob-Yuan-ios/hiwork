@@ -6,7 +6,7 @@
     <content url="jar://$USER_HOME$/Downloads/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip!/">
       <sourceFolder url="jar://$USER_HOME$/Downloads/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip!/" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.10" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyNamespacePackagesService">
