@@ -3,6 +3,16 @@ import requests
 import pandas as pd
 
 
+def dateStrToTimeStamp(date_string: str = '2024-08-30 11:35:00'):
+    # 转为时间数组
+    time_array: time.struct_time = time.strptime(date_string, "%Y-%m-%d %H:%M:%S")
+    print(time_array)
+    # 结构体属性 tm_year、tm_mon、tm_mday、tm_hour、tm_min、tm_sec
+    print("转换后的年份:" + format(time_array.tm_year))
+    time_stamp = int(time.mktime(time_array))
+    return time_stamp
+
+
 def getLimitUpPool():
     params = {
         'page': '1',
@@ -42,8 +52,6 @@ def getLimitUpPool():
             result.setdefault('reason_type', members['reason_type'])
             result.setdefault('limit_up_type', members['limit_up_type'])
 
-        # print(data)
-
         format_dic = {
             'name': name,
             'high_days': high_days,
@@ -78,10 +86,10 @@ def blockTop():
         data = response.json()
         for members in data['data']:
             name = []
-            first_limit_up_time = []
-            last_limit_up_time = []
             reason_info = []
             reason_type = []
+            last_limit_up_time = []
+            first_limit_up_time = []
             for stocks in members['stock_list']:
                 name.append(stocks['name'])
                 reason_type.append(stocks['reason_type'])

@@ -5,4 +5,7 @@
 
 from services.httpRequest import *
 
-blockTop()
+time_stamp: int = dateStrToTimeStamp()
+print("转换后的时间戳:" + format(time_stamp))
+
+# blockTop()
