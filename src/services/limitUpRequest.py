@@ -66,7 +66,7 @@ def getLimitUpPool():
         print("Request failed with status code: {response.status_code}")
 
 
-def blockTop():
+def getBlockTop():
     params = {
         'filter': 'HS,GEM2STAR',
         'order_field': '330324',
