@@ -3,6 +3,18 @@ import requests
 import pandas as pd
 
 
+def limitUpInfo():
+    url = "https://eq.10jqka.com.cn/open/api/wencai/zhangting5.txt"
+    response = requests.get(
+        url=url
+    )
+    if 200 == response.status_code:
+        data = response.json()
+        print(data)
+    else:
+        print("request failed")
+
+
 def dateStrToTimeStamp(date_string: str = '2024-08-30 11:35:00'):
     # 转为时间数组
     time_array: time.struct_time = time.strptime(date_string, "%Y-%m-%d %H:%M:%S")
@@ -11,7 +23,6 @@ def dateStrToTimeStamp(date_string: str = '2024-08-30 11:35:00'):
     print("转换后的年份:" + format(time_array.tm_year))
     time_stamp = int(time.mktime(time_array))
     return time_stamp
-
 
 
 def getLimitUpPool():

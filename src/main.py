@@ -11,6 +11,4 @@ from services.baseInfoRequest import *
 
 # getBlockTop()
 # waitList()
-
-baseInfoDetail(code='001277', stock_type='stock')
-
+limitUpInfo()
